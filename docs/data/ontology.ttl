@@ -1,5 +1,7 @@
-@prefix samian: <http://rgzm.de/samian/> .
-@prefix amt: <http://www.academic-meta-tool.xyz/> .
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX samian: <http://rgzm.de/samian/>
+PREFIX amt: <http://academic-meta-tool.xyz/vocab#>
 
 # concepts
 
