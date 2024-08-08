@@ -58,6 +58,7 @@ var AMT = function () {
           }
         }
         callback(bindings);
+        console.log(bindings);
       },
       error: function (data) {
         console.log("Es ist ein Fehler aufgetreten: " + data);
