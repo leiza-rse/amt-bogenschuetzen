@@ -53,6 +53,7 @@ var AMT = function () {
         Accept: "application/json",
       },
       success: function (data) {
+        console.log(data);
         var bindings = data.results.bindings;
         for (var i in bindings) {
           for (var j in bindings[i]) {
@@ -60,7 +61,6 @@ var AMT = function () {
           }
         }
         callback(bindings);
-        console.log(bindings);
       },
       error: function (data) {
         console.log("Es ist ein Fehler aufgetreten: " + data);
