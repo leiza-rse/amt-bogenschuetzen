@@ -37,7 +37,7 @@ var AMT = function () {
   var AXIOMS = [];
 
   var STORE =
-    "http://java-dev.rgzm.de/rdf4j-server/repositories/amt-bogenschuetzen";
+    "https://java-dev.rgzm.de/rdf4j-server/repositories/amt-bogenschuetzen";
   var PREFIX = "http://www.academic-meta-tool.xyz/";
 
   var queryStore = function (query, callback) {
