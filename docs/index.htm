@@ -28,6 +28,8 @@
 			}
 			#footer {
 				height: 100px;
+            	color: white;
+            	background-color: #4f628b !important;
 			}
 			#graph {
 				height: calc(100% - 100px);
@@ -40,6 +42,30 @@
 				width: 60% !important;
 				height: 80% !important;
 			}
+			div.info {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: auto;
+            height: auto;
+            border: 1px dashed grey;
+            background: #4f628b;
+            padding-top: 0px;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 15px;
+            color: white !important;
+        }
+        div.logos {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: auto;
+            height: auto;
+        }
+		h4 {
+        	font-size: 24px;
+      	}
 		</style>
 		<script>
 			var MAINZED = {};
@@ -508,24 +534,26 @@
 
 	<body>
 		<div id="graph" class="col s12"></div>
-		<div id="footer" class="page-footer blue lighten-3 col s12">
+		<!--<div id="footer" class="page-footer blue lighten-3 col s12">
 			<div class="container">
 				<div class="row">
-					<div class="col s6 left-align">
-						<a class="btn-floating btn-large black" onclick="info()" title="Information"><i class="material-icons">info_outline</i></a>
-						<a class="btn-floating btn-large black" onclick="exportOptions()" title="Download Edges and Nodes"><i class="material-icons">file_download</i></a>
-						<b class="description">AMT Punzen-Töpfer-Netzwerk</b>
-					</div>
 					<div id="buttons" class="col s3 right-align">
-						<a class="btn-floating btn-large edit blue" onclick="edit()" title="Close edit mode"><i class="material-icons">flash_on</i></a>
-						<a class="btn-floating btn-large normal blue" onclick="edit()" title="Open edit mode"><i class="material-icons">input</i></a>
-					</div>
-					<div id="store" class="col s3 left-align">
-						<div><a class="btn-floating btn-large edit red" onclick="cancel()" title="Cancel changes"><i class="material-icons">cancel</i></a></div>
-						<!--<div id="save"><a class="btn-floating btn-large normal black" onclick="save()" title="Save changes"><i class="material-icons">save</i></a></div>-->
+						<a class="btn-floating btn-large edit blue" onclick="edit()" title="Close edit mode"><i class="material-icons">flag</i></a>
+						<a class="btn-floating btn-large normal blue" onclick="edit()" title="Open edit mode"><i class="material-icons">start</i></a>
 					</div>
 				</div>
 			</div>
+		</div>-->
+		<div id="footer">
+            <div class="row">
+				<div class="col s6" style="height:100px;">
+            		<span style="position:absolute; bottom:40px;left:50px;">CC BY 4.0 (2024), by F. Thiery and A.W. Mees / LEIZA</span>
+				</div>
+				<div class="col s6" style="height:100px;">
+					<a class="btn-floating btn-large edit blue right" style="position:absolute; bottom:25px; right:50px;" onclick="edit()" title="Close edit mode"><i class="material-icons">flag</i></a>
+					<a class="btn-floating btn-large normal blue right" style="position:absolute; bottom:25px; right:50px;" onclick="edit()" title="Open edit mode"><i class="material-icons">start</i></a>
+            	</div>
+          	</div>
 		</div>
 		<div id="modal" class="modal">
 			<input id="uri" hidden />
@@ -621,6 +649,19 @@ Frühgeschichtlicher Altertümer 45, 1 (Mainz 2014).</p>
       	</table>
 				<textarea id="hiddenclipboard" hidden></textarea>
 			</div>
+		</div>
+		<!-- Info DIV -->
+		<div class="info">
+			<h4>Bogenschützen-Punzen @ AMT</h4>
+			Software by Florian Thiery (RGZM) and Martin Unold (i3mainz).
+			<br>Data concept by Florian Thiery / A.W. Mees (RGZM).
+			<br><br>
+			<a class="btn-floating btn-small blue"><i class="material-icons">start</i></a>&nbsp;<i>activate reasoning</i>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			<a class="btn-floating btn-small blue"><i class="material-icons">flag</i></a>&nbsp;<i>deactivate reasoning</i>
+		</div>
+		<div class="logos">
+			<a href="http://academic-meta-tool.xyz" target="_blank"><img src="amt_logos.png" height="300"></a>
 		</div>
 	</body>
 </html>
