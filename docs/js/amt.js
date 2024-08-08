@@ -95,7 +95,7 @@ var AMT = function () {
 
     // load concepts
     queryStore(
-      "SELECT ?concept ?label ?placeholder WHERE { ?concept rdf:type amt:Concept . ?concept rdfs:label ?label . ?concept amt:placeholder ?placeholder . }",
+      "SELECT DISTINCT ?concept ?label ?placeholder WHERE { ?concept rdf:type amt:Concept . ?concept rdfs:label ?label . ?concept amt:placeholder ?placeholder . }",
       function (data) {
         CONCEPTS = data;
         --todo;
@@ -107,7 +107,7 @@ var AMT = function () {
 
     // load roles
     queryStore(
-      "SELECT ?role ?label ?domain ?range WHERE { ?role rdf:type amt:Role . ?role rdfs:label ?label . ?role rdfs:domain ?domain . ?role rdfs:range ?range . }",
+      "SELECT DISTINCT ?role ?label ?domain ?range WHERE { ?role rdf:type amt:Role . ?role rdfs:label ?label . ?role rdfs:domain ?domain . ?role rdfs:range ?range . }",
       function (data) {
         ROLES = data;
         --todo;
@@ -119,7 +119,7 @@ var AMT = function () {
 
     // load nodes
     queryStore(
-      "SELECT ?id ?label ?concept WHERE { ?concept rdf:type amt:Concept . ?id amt:instanceOf ?concept . ?id rdfs:label ?label . }",
+      "SELECT DISTINCT ?id ?label ?concept WHERE { ?concept rdf:type amt:Concept . ?id amt:instanceOf ?concept . ?id rdfs:label ?label . }",
       function (data) {
         graph.nodes = data;
         --todo;
@@ -131,7 +131,7 @@ var AMT = function () {
 
     // load edges
     queryStore(
-      "SELECT ?role ?from ?to ?width WHERE { ?role rdf:type amt:Role . ?stmt rdf:subject ?from . ?stmt rdf:predicate ?role . ?stmt rdf:object ?to . ?stmt amt:weight ?width . }",
+      "SELECT DISTINCT ?role ?from ?to ?width WHERE { ?role rdf:type amt:Role . ?stmt rdf:subject ?from . ?stmt rdf:predicate ?role . ?stmt rdf:object ?to . ?stmt amt:weight ?width . }",
       function (data) {
         graph.edges = data;
         --todo;
@@ -143,7 +143,7 @@ var AMT = function () {
 
     // load axioms
     queryStore(
-      "SELECT * WHERE { ?axiom rdf:type ?type . ?type rdfs:subClassOf ?grp . ?grp rdfs:subClassOf amt:Axiom . ?axiom ?p ?o . }",
+      "SELECT DISTINCT * WHERE { ?axiom rdf:type ?type . ?type rdfs:subClassOf ?grp . ?grp rdfs:subClassOf amt:Axiom . ?axiom ?p ?o . }",
       function (data) {
         for (var i in data) {
           if (!AXIOMS[data[i].axiom]) AXIOMS[data[i].axiom] = {};
