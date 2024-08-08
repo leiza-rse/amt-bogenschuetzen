@@ -41,6 +41,8 @@ var AMT = function () {
   var PREFIX = "http://academic-meta-tool.xyz/vocab#";
 
   var queryStore = function (query, callback) {
+    console.log("store", STORE);
+    console.log("query", "PREFIX amt: <" + PREFIX + "> " + query);
     $.ajax({
       url: STORE,
       dataType: "jsonp",
