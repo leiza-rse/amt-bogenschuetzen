@@ -36,9 +36,9 @@ var AMT = function () {
   };
   var AXIOMS = [];
 
-  var STORE = "https://academicmetatool.solidweb.org/files/bogenschuetzen.ttl";
-  //var STORE =
-  //"https://java-dev.rgzm.de/rdf4j-server/repositories/amt-bogenschuetzen";
+  //var STORE = "https://academicmetatool.solidweb.org/files/bogenschuetzen.ttl";
+  var STORE =
+    "https://java-dev.rgzm.de/rdf4j-server/repositories/amt-bogenschuetzen";
   var PREFIX = "http://academic-meta-tool.xyz/vocab#";
 
   var queryStore = function (query, callback) {
