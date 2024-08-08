@@ -44,7 +44,7 @@
 		<script>
 			var MAINZED = {};
 			MAINZED.graph = {};
-			MAINZED.edit = false;
+			MAINZED.edit = true;
 			MAINZED.thisNodes = [];
 			MAINZED.thisEdges = [];
 			var update = function() {
@@ -237,8 +237,8 @@
 				MAINZED.amt.load(function() {
 					var concepts = MAINZED.amt.getConcepts();
 					for (var i in concepts) {
-						var a = $("<a class='btn-floating btn-large edit green' onclick='openModal(false,\""+concepts[i].concept+"\")' title='Add "+concepts[i].label+" node'><i class='material-icons'>add "+concepts[i].label.substr(0,1)+"</i></a>");
-						$("#buttons").prepend(a);
+						//var a = $("<a class='btn-floating btn-large edit green' onclick='openModal(false,\""+concepts[i].concept+"\")' title='Add "+concepts[i].label+" node'><i class='material-icons'>add "+concepts[i].label.substr(0,1)+"</i></a>");
+						//$("#buttons").prepend(a);
 					}
 					$(".edit").hide();
 					var graph = MAINZED.amt.getGraph(true);
